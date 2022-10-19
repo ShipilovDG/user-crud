@@ -11,7 +11,7 @@ class UserControllerTest extends TestCase
 
     public function testCreate()
     {
-        App::
+
     }
 
     public function testGet()
