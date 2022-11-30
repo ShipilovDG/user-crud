@@ -9,6 +9,23 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    /**
+     * @OA\Info(title="Search API", version="3.0.0")
+     *
+     */
+    public function qwe()
+    {
+
+    }
+    /**
+     * @OA\Get(
+     *     path="/api/data.json",
+     *     @OA\Response(
+     *         response="200",
+     *         description="The data"
+     *     )
+     * )
+     */
     private UserService $service;
 
     public function __construct(UserService $service)
