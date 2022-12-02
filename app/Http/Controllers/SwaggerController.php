@@ -13,7 +13,7 @@ class SwaggerController extends Controller
 
     public function getSwaggerSchema(): string
     {
-        $openapi = Generator::scan(['D:\xamp\htdocs\example-app\routes']);
+        $openapi = Generator::scan([env('SWAGGER_PATH')]);
         header('Content-Type: application/json');
         return $openapi->toJson();
     }
