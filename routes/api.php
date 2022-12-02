@@ -3,6 +3,10 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+/**
+ * @OA\Info(title="Search API", version="3.0.0")
+ *
+ */
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('/user/{id}', [UserController::class, 'get']);
-Route::post('/user', [UserController::class, 'create']);
 
+Route::post('/createCategory');//
+Route::post('/compareObjectToCategory');//добавляем строки по категориям

@@ -6,26 +6,10 @@ use App\Http\Requests\UserRequest;
 use App\Service\UserService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Whoops\Handler\JsonResponseHandler;
 
 class UserController extends Controller
 {
-    /**
-     * @OA\Info(title="Search API", version="3.0.0")
-     *
-     */
-    public function qwe()
-    {
-
-    }
-    /**
-     * @OA\Get(
-     *     path="/api/data.json",
-     *     @OA\Response(
-     *         response="200",
-     *         description="The data"
-     *     )
-     * )
-     */
     private UserService $service;
 
     public function __construct(UserService $service)
@@ -33,7 +17,7 @@ class UserController extends Controller
         $this->service = $service;
     }
 
-    public function get(Request $request, int $id): JsonResponse
+    public function get(Request $request, int $id): JsonResponseHandler
     {
         $user = $this->service->getById($id);
         return new JsonResponse($user, $user ? 200 : 404);

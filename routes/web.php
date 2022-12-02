@@ -12,5 +12,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/**
+ * @OA\Get(
+ *     path="/",
+ *     @OA\Response(
+ *         response="200",
+ *         description="returns swagger ui"
+ *     )
+ * )
+ */
 Route::get('/', [\App\Http\Controllers\SwaggerController::class, 'getTemplate']);
+/**
+ * @OA\Get(
+ *     path="/swagger",
+ *     @OA\Response(
+ *         response="200",
+ *         description="returns swagger json"
+ *     )
+ * )
+ */
 Route::get('/swagger', [\App\Http\Controllers\SwaggerController::class, 'getSwaggerSchema']);
