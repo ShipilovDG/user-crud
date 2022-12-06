@@ -32,3 +32,15 @@ Route::get('/', [\App\Http\Controllers\SwaggerController::class, 'getTemplate'])
  * )
  */
 Route::get('/swagger', [\App\Http\Controllers\SwaggerController::class, 'getSwaggerSchema']);
+/**
+ * @OA\Get(
+ *     path="/getCategory",
+ *     @OA\Response(
+ *         response="200",
+ *         description="returns categoryObject"
+ *     )
+ * )
+ */
+Route::get('/getCategory', function () {
+    return new \Illuminate\Http\JsonResponse(['id' => 1, "title" => 'MyCategorySport']);
+});

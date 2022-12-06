@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->json('img_paths');
+            $table->date('date');
             $table->timestamps();
         });
     }
