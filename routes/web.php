@@ -42,5 +42,5 @@ Route::get('/swagger', [\App\Http\Controllers\SwaggerController::class, 'getSwag
  * )
  */
 Route::get('/getCategory', function () {
-    return new \Illuminate\Http\JsonResponse(['id' => 1, "title" => 'MyCategorySport']);
+    return new \Illuminate\Http\JsonResponse(\App\Models\Category::all());
 });
